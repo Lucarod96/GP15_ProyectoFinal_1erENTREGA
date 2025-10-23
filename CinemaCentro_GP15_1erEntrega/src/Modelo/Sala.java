@@ -15,15 +15,15 @@ public class Sala {
     private int capacidad;
     private boolean estado;
 
+    public Sala() {
+    }
+
     public Sala(int nroSala, boolean apta3D, int capacidad, boolean estado) {
         this.nroSala = nroSala;
         this.apta3D = apta3D;
         this.capacidad = capacidad;
         this.estado = estado;
     }
-
-    
-    
     
     public int getNroSala() {
         return nroSala;

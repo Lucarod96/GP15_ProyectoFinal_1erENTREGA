@@ -15,7 +15,7 @@ import java.sql.SQLException;
 public class salaData {
     
     public void guardarSala (Sala sala){
-        String sql = "INSERT INTO sala (nroSala,apta3D,capacidad,estado) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO sala (nro_sala,apta_3d,capacidad,estado) VALUES (?, ?, ?, ?)";
         
           try {
             Connection con = Conexion.getConexion();
