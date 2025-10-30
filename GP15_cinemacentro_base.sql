@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-10-2025 a las 01:14:14
+-- Tiempo de generación: 30-10-2025 a las 23:39:09
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -62,11 +62,7 @@ CREATE TABLE `detalle_ticket` (
   `id_detalle` int(11) NOT NULL,
   `id_ticket` int(11) NOT NULL,
   `id_funcion` int(11) NOT NULL,
-  `id_asiento` int(11) NOT NULL,
-  `funcion` varchar(60) NOT NULL,
-  `fecha_funcion` datetime NOT NULL,
-  `lugares` varchar(200) NOT NULL,
-  `cantidad` int(11) NOT NULL
+  `id_asiento` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -118,6 +114,13 @@ CREATE TABLE `sala` (
   `estado` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `sala`
+--
+
+INSERT INTO `sala` (`nro_sala`, `apta_3d`, `capacidad`, `estado`) VALUES
+(1, 1, 200, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -130,6 +133,7 @@ CREATE TABLE `ticket_compra` (
   `id_funcion` int(11) NOT NULL,
   `fecha_compra` datetime NOT NULL,
   `precio_unitario` decimal(6,2) NOT NULL,
+  `cantidad` int(11) NOT NULL,
   `monto_total` decimal(8,2) DEFAULT NULL,
   `canal` varchar(30) NOT NULL,
   `medio_pago` varchar(30) NOT NULL
@@ -229,7 +233,7 @@ ALTER TABLE `pelicula`
 -- AUTO_INCREMENT de la tabla `sala`
 --
 ALTER TABLE `sala`
-  MODIFY `nro_sala` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `nro_sala` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `ticket_compra`
